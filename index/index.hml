@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>どっかの誰かさん用の動画共有ツール</title>
+
+  <!-- ▼ Discord プレビュー＆インライン再生用 OGP設定 ▼ -->
+  <meta property="og:title" content="どっかの誰かさん用の動画共有ツール">
+  <meta property="og:description" content="共有された動画をブラウザで再生します。">
+  <meta property="og:type" content="video.other">
+  <!-- ★要変更: あなたのGitHub Pagesの公開URL（末尾のスラッシュまで） -->
+  <meta property="og:url" content="https://あなたのユーザー名.github.io/リポジトリ名/">
+  
+  <!-- ▼ Discordでチャット内に直接動画プレイヤーを埋め込んで再生させる設定（※1つ目の動画を代表に設定） ▼ -->
+  <meta property="og:video" content="https://あなたのユーザー名.github.io/リポジトリ名/movie1.mp4">
+  <meta property="og:video:secure_url" content="https://あなたのユーザー名.github.io/リポジトリ名/movie1.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="1280">
+  <meta property="og:video:height" content="720">
+  <meta name="twitter:card" content="player">
+  <!-- ▲ OGP設定ここまで ▲ -->
+
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #121212;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+    h1 {
+      font-size: 1.3rem;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+      border-left: 4px solid #5865F2;
+      padding-left: 10px;
+    }
+    .video-card {
+      background: #1e1e1e;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      margin-bottom: 24px;
+    }
+    .video-title {
+      font-size: 1.05rem;
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: #e0e0e0;
+    }
+    video {
+      width: 100%;
+      border-radius: 8px;
+      background: #000;
+      outline: none;
+    }
+    .controls {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .btn {
+      background-color: #2b2d31;
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      border: 1px solid #444;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background-color: #3f4147;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>どっかの誰かさん用の動画共有ツール</h1>
+
+    <!-- 動画 1つ目（※DiscordでURLを貼った際にインライン再生される動画） -->
+    <div class="video-card">
+      <h2 class="video-title">動画タイトル 1</h2>
+      <video controls playsinline preload="metadata">
+        <source src="movie1.mp4" type="video/mp4">
+        お使いのブラウザは動画の再生に対応していません。
+      </video>
+      <div class="controls">
+        <a href="movie1.mp4" download class="btn">保存する</a>
+      </div>
+    </div>
+
+    <!-- 動画 2つ目 -->
+    <div class="video-card">
+      <h2 class="video-title">動画タイトル 2</h2>
+      <video controls playsinline preload="metadata">
+        <source src="movie2.mp4" type="video/mp4">
+        お使いのブラウザは動画の再生に対応していません。
+      </video>
+      <div class="controls">
+        <a href="movie2.mp4" download class="btn">保存する</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
